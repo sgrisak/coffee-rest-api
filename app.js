@@ -9,7 +9,7 @@ const port = 3000;
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
-// In-memory storage for coffee products (in practice, you'd use a database)
+// In-memory storage for coffee products
 let coffees = [
   {
     id: 1,
