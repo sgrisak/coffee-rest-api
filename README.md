@@ -49,6 +49,7 @@ All endpoints are relative to: `http://localhost:3000/api`
 
 - **URL:** `/coffees`
 - **Method:** `GET`
+- **cURL:** `curl -X GET http://localhost:3000/api/coffees`
 - **Success Response:**
   - **Code:** 200
   - **Content Example:**
@@ -75,6 +76,7 @@ All endpoints are relative to: `http://localhost:3000/api`
 
 - **URL:** `/coffees/:id`
 - **Method:** `GET`
+- **cURL:** `curl -X GET http://localhost:3000/api/coffees/1`
 - **URL Params:** `id=[integer]`
 - **Success Response:**
   - **Code:** 200
@@ -96,13 +98,26 @@ All endpoints are relative to: `http://localhost:3000/api`
 
 - **URL:** `/coffees`
 - **Method:** `POST`
+- **cURL:**
+
+```bash
+curl -X POST http://localhost:3000/api/coffees/2 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Yemen Mocha Matari",
+    "roast": "Medium-Light",
+    "price": 21.99,
+    "origin": "Yemen"
+  }'
+```
+
 - **Data Params:**
   ```json
   {
-    "name": "Sumatra Mandheling",
-    "roast": "Dark",
-    "price": 15.99,
-    "origin": "Indonesia"
+    "name": "Yemen Mocha Matari",
+    "roast": "Medium-Light",
+    "price": 21.99,
+    "origin": "Yemen"
   }
   ```
 - **Success Response:**
@@ -113,6 +128,19 @@ All endpoints are relative to: `http://localhost:3000/api`
 
 - **URL:** `/coffees/:id`
 - **Method:** `PUT`
+- **cURL:**
+
+```bash
+curl -X PUT http://localhost:3000/api/coffees/2 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "string",
+    "roast": "string",
+    "price": "number",
+    "origin": "string"
+  }'
+```
+
 - **URL Params:** `id=[integer]`
 - **Data Params:** Any of the following fields:
   ```json
@@ -134,6 +162,7 @@ All endpoints are relative to: `http://localhost:3000/api`
 
 - **URL:** `/coffees/:id`
 - **Method:** `DELETE`
+- **cURL:** `curl -X DELETE http://localhost:3000/api/coffees/3`
 - **URL Params:** `id=[integer]`
 - **Success Response:**
   - **Code:** 204
@@ -147,4 +176,4 @@ All endpoints are relative to: `http://localhost:3000/api`
 - Add input validation
 - Add filtering and search capabilities
 - Add Swagger/OpenAPI documentation
-- Add cURL examples
+- ~~Add cURL examples~~
